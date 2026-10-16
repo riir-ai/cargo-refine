@@ -91,10 +91,25 @@ fi
 
 mkdir -p "$DEST"
 tar -xzf "$TMP/$ASSET" -C "$TMP"
+
+# A symlink at the destination is a developer convention (the link points at a
+# local build). Never overwrite it silently: move the link aside and say how to
+# restore it. A plain file is replaced as before.
+LINK_TARGET=""
+if [ -L "$DEST/$BIN" ]; then
+    LINK_TARGET="$(readlink "$DEST/$BIN")"
+    mv -f "$DEST/$BIN" "$DEST/$BIN.symlink.bak"
+fi
+
 mv "$TMP/$BIN" "$DEST/$BIN"
 chmod +x "$DEST/$BIN"
 
 echo "installed $BIN $TAG ($TARGET) -> $DEST/$BIN"
+if [ -n "$LINK_TARGET" ]; then
+    echo "note: $DEST/$BIN was a symlink to $LINK_TARGET" >&2
+    echo "      it is kept as $DEST/$BIN.symlink.bak - to restore it:" >&2
+    echo "      ln -sf '$LINK_TARGET' '$DEST/$BIN'" >&2
+fi
 case ":$PATH:" in
     *":$DEST:"*) ;;
     *) echo "note: $DEST is not on your PATH - add it to use 'cargo ${BIN#cargo-}'" ;;

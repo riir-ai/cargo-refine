@@ -6,6 +6,10 @@ version-specific caveats that used to live in the README.
 
 ## Unreleased
 
+- `install.sh` and `install.ps1` no longer silently replace a symlinked
+  `~/.cargo/bin/cargo-refine`. If the destination is a symlink, the installer
+  keeps it as `cargo-refine.symlink.bak` and prints the command to restore it.
+  A plain file is replaced as before.
 - `cargo refine --help` (and `-h`) prints a short page of everyday commands and
   exits 0. `--help-all` prints every flag. Before, `--help` was rejected as an
   unknown flag.

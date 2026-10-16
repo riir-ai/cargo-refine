@@ -61,8 +61,28 @@ try {
 
     Expand-Archive -Path "$tmp\$asset" -DestinationPath $tmp -Force
     New-Item -ItemType Directory -Force -Path $Dest | Out-Null
-    Move-Item -Force (Join-Path $tmp "$bin.exe") (Join-Path $Dest "$bin.exe")
-    Write-Host "installed $bin $tag (x86_64-pc-windows-$flavor) -> $Dest\$bin.exe"
+    $destExe = Join-Path $Dest "$bin.exe"
+
+    # A symlink at the destination is a developer convention (the link points at
+    # a local build). Never overwrite it silently: move the link aside and say how
+    # to restore it. A plain file is replaced as before.
+    $linkTarget = $null
+    $linkType = $null
+    $existing = Get-Item -LiteralPath $destExe -Force -ErrorAction SilentlyContinue
+    if ($existing -and $existing.LinkType) {
+        $linkType = [string]$existing.LinkType
+        $linkTarget = @($existing.Target)[0]
+        Move-Item -Force -LiteralPath $destExe -Destination "$destExe.symlink.bak"
+    }
+
+    Move-Item -Force (Join-Path $tmp "$bin.exe") $destExe
+    Write-Host "installed $bin $tag (x86_64-pc-windows-$flavor) -> $destExe"
+    if ($linkTarget) {
+        Write-Host "note: $destExe was a $linkType to $linkTarget"
+        Write-Host "      it is kept as $destExe.symlink.bak - to restore it (elevated shell):"
+        Write-Host "      New-Item -ItemType SymbolicLink -Force -Path '$destExe' -Target '$linkTarget'"
+        Write-Host "      without elevation, re-copy your local build over $destExe after each rebuild"
+    }
     if (($env:Path -split ';') -notcontains $Dest) {
         Write-Host "note: $Dest is not on your PATH - add it to use 'cargo $($bin.Substring(6))'"
     }

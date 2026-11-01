@@ -85,6 +85,23 @@ build carries.
 - **Not a guesser.** It refuses anything it cannot prove safe. A warning without
   a safe mechanical fix is deliberately left for you.
 
+## Build postures
+
+Refine ships from two build postures of the same source:
+
+- **The release build** — what the installers above ship today. It carries an
+  optional credit/networking lane; the "What leaves your machine" and
+  "Cost and KAT" sections below describe it.
+- **The charitable build** — the same fixer with the credit/networking lane
+  compiled out: no login, no mining, no metering, and those flags refuse with
+  a message naming the missing build features. An optional credit/networking
+  lane exists upstream; these builds exclude it — an inert accounting-types
+  crate remains linked. A charitable build ships only after a sweep asserts
+  its CLI output, dependency graph and binary carry none of those surfaces.
+
+`cargo refine --version` prints the compiled feature set, so you can always
+see which posture you are running.
+
 ## What leaves your machine
 
 | You run | What is sent |

@@ -1,7 +1,7 @@
 # Changelog
 
 Release notes for each version are on the
-[releases page](https://github.com/gist-rs/cargo-refine/releases). This file keeps the
+[releases page](https://github.com/riir-ai/cargo-refine/releases). This file keeps the
 version-specific caveats that used to live in the README.
 
 ## Unreleased

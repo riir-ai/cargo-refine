@@ -4,7 +4,7 @@
 mechanical fixes. No AI model and no prompts: the fixes come from a compiled,
 human-written rule set, and a fix is kept only if your code still compiles.
 
-Home: <https://refine.gist.rs> · Releases: <https://github.com/gist-rs/cargo-refine/releases> ·
+Home: <https://refine.riir.ai> · Releases: <https://github.com/riir-ai/cargo-refine/releases> ·
 Changes: [CHANGELOG.md](CHANGELOG.md)
 
 ## Install
@@ -12,19 +12,19 @@ Changes: [CHANGELOG.md](CHANGELOG.md)
 macOS / Linux:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/gist-rs/cargo-refine/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.sh | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/gist-rs/cargo-refine/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.ps1 | iex
 ```
 
 Homebrew (prebuilt formula — nothing is compiled):
 
 ```sh
-brew tap gist-rs/tap && brew trust gist-rs/tap && brew install cargo-refine
+brew tap riir-ai/tap && brew trust riir-ai/tap && brew install cargo-refine
 ```
 
 Scoop:

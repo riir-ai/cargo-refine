@@ -1,6 +1,6 @@
 # cargo-refine installer (binary-only distribution).
-# Usage: iwr -useb https://raw.githubusercontent.com/gist-rs/cargo-refine/main/install.ps1 | iex
-# Pin a version: & ([scriptblock]::Create((iwr -useb https://raw.githubusercontent.com/gist-rs/cargo-refine/main/install.ps1))) -Version v0.1.3
+# Usage: iwr -useb https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.ps1 | iex
+# Pin a version: & ([scriptblock]::Create((iwr -useb https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.ps1))) -Version v0.1.3
 param([string]$Version = "")
 
 $ErrorActionPreference = "Stop"
@@ -9,7 +9,7 @@ $ErrorActionPreference = "Stop"
 # enable it before the first call (no-op where it is already on, e.g. PS 7+).
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$Repo = "gist-rs/cargo-refine"
+$Repo = "riir-ai/cargo-refine"
 $Dest = Join-Path $env:USERPROFILE ".cargo\bin"
 
 if ($env:PROCESSOR_ARCHITECTURE -ne "AMD64") {

@@ -72,7 +72,7 @@ The Software contacts the Service to check for rule-set updates and, depending o
 the options you choose, to meter usage, sync account state, report statistics,
 or send contributions. What is sent in each mode is listed in the "What leaves
 your machine" section of the public README at
-<https://github.com/gist-rs/cargo-refine#what-leaves-your-machine>. That section
+<https://github.com/riir-ai/cargo-refine#what-leaves-your-machine>. That section
 is part of this agreement. You can turn off update checks with
 `--no-update`. Statistics and mining are off until you turn them on.
 
@@ -190,4 +190,4 @@ a confidentiality duty, or (b) your breach of section 3.
 ## 16. Contact
 
 Questions about these terms: open an issue at
-<https://github.com/gist-rs/cargo-refine/issues>.
+<https://github.com/riir-ai/cargo-refine/issues>.

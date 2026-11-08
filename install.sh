@@ -1,10 +1,10 @@
 #!/bin/sh
 # cargo-refine installer (binary-only distribution).
-# Usage: curl -fsSL https://raw.githubusercontent.com/gist-rs/cargo-refine/main/install.sh | sh
+# Usage: curl -fsSL https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.sh | sh
 # Pin a version: CARGO_REFINE_VERSION=v0.1.3 sh install.sh
 set -eu
 
-REPO="gist-rs/cargo-refine"
+REPO="riir-ai/cargo-refine"
 DEST="${CARGO_REFINE_INSTALL_DIR:-$HOME/.cargo/bin}"
 
 need() { command -v "$1" >/dev/null 2>&1; }

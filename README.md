@@ -30,7 +30,7 @@ brew tap riir-ai/tap && brew trust riir-ai/tap && brew install cargo-refine
 Scoop:
 
 ```powershell
-scoop bucket add gist-rs https://github.com/gist-rs/scoop-bucket
+scoop bucket add riir-ai https://github.com/riir-ai/scoop-bucket
 scoop install cargo-refine
 ```
 

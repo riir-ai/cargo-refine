@@ -9,7 +9,17 @@ Changes: [CHANGELOG.md](CHANGELOG.md)
 
 ## Install
 
-macOS / Linux:
+With a Rust toolchain, from [crates.io](https://crates.io/crates/cargo-refine) (MIT, any OS):
+
+```sh
+cargo install cargo-refine
+```
+
+The crates.io build fixes code. The prebuilt binaries below (no toolchain needed to
+install) additionally carry the hosted contribution surface: `cargo refine join`, the
+leaderboard and latent retrieval.
+
+Prebuilt — macOS / Linux:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.sh | sh

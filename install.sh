@@ -114,3 +114,4 @@ case ":$PATH:" in
     *":$DEST:"*) ;;
     *) echo "note: $DEST is not on your PATH - add it to use 'cargo ${BIN#cargo-}'" ;;
 esac
+echo "tip: cargo-refine is also on crates.io - with a Rust toolchain, 'cargo install cargo-refine' installs/upgrades the code-fixing build"

@@ -90,4 +90,4 @@ try {
 finally {
     Remove-Item -Recurse -Force $tmp -ErrorAction SilentlyContinue
 }
-Write-Host "tip: cargo-refine is also on crates.io - with a Rust toolchain, 'cargo install cargo-refine' installs/upgrades the code-fixing build"
+Write-Host "tip: also on crates.io as riir-refine - with a Rust toolchain, 'cargo install --force riir-refine' installs/upgrades the code-fixing build"

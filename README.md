@@ -12,7 +12,7 @@ Changes: [CHANGELOG.md](CHANGELOG.md)
 With a Rust toolchain, from [crates.io](https://crates.io/crates/cargo-refine) (MIT, any OS):
 
 ```sh
-cargo install cargo-refine
+cargo install riir-refine   # binary: cargo-refine
 ```
 
 The crates.io build fixes code. The prebuilt binaries below (no toolchain needed to

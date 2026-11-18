@@ -34,7 +34,7 @@ iwr -useb https://raw.githubusercontent.com/riir-ai/cargo-refine/main/install.ps
 Homebrew (prebuilt formula — nothing is compiled):
 
 ```sh
-brew tap riir-ai/tap && brew trust riir-ai/tap && brew install cargo-refine
+brew tap riir-ai/tap && brew trust riir-ai/tap && brew install riir-refine
 ```
 
 Scoop:
